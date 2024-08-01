@@ -54,9 +54,13 @@ namespace BookStoreApp.Controllers
             }
             return View();
         }
-        public IActionResult ListOfBook()
+        public IActionResult ListOfBook(string bookName)
         {
             var books = GetBooksFromFiles();
+            if (!string.IsNullOrEmpty(bookName))
+            {
+                books = books.Where(x => x.Name.Contains(bookName)).ToList();
+            }
             return View(books);
         }
         public IActionResult Privacy()

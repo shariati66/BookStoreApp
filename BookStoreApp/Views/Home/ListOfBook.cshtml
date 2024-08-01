@@ -1,7 +1,12 @@
 ﻿@model IEnumerable<BookStoreApp.Models.BookViewModel>
 @{
 }
-
+<form asp-action="ListOfBook" method="get">
+    <div class="form-group row">
+        <input type="text" name="bookName" class="form-control" />
+        <input type="submit" class="btn btn-success" value="Search" />
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
