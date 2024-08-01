@@ -5,8 +5,8 @@ namespace BookStoreApp.Models
 {
     public class BookViewModel
     {
-        [Range(1,int.MaxValue,ErrorMessage ="Id must greater than One")]
-        public int Id { get; set; }
+        [Range(1, int.MaxValue, ErrorMessage = "Id must greater than One")]
+        public int Id { get; set; } = 1;
         [Required(ErrorMessage ="name is required")]
         public string Name { get; set; }
         public string Author { get; set; }

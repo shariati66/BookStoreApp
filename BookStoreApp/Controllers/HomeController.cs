@@ -24,7 +24,11 @@ namespace BookStoreApp.Controllers
         [HttpPost]
         public IActionResult Create(BookViewModel book)
         {
-            return Json(book);
+            if(ModelState.IsValid)
+            {
+                return Json(book);
+            }
+            return Json(null);
         }
         public IActionResult ListOfBook()
         {
