@@ -1,0 +1,19 @@
+﻿@model BookViewModel
+@{
+    ViewData["Title"] = "Add Book To Store";
+}
+<div class="container d-flex justify-content-center vw-100 vh-100">
+    <div class="w-25 h-25 bg-info">
+        <h1>@ViewData["Title"]</h1>
+
+        <form method="post" asp-action="Create">
+            <div>
+                <label for="name">Book Name : </label>
+                <input class="form-control" asp-for="Name" id="name" placeholder="Book Name" />
+            </div>
+            <div>
+            <input asp-for=""
+            </div>
+        </form>
+    </div>
+</div>
