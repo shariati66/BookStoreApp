@@ -1,4 +1,25 @@
-﻿
+﻿@model IEnumerable<BookStoreApp.Models.BookViewModel>
 @{
-    ViewData["Title"] = "Books in the store";
 }
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Publish Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Author</td>
+                <td>@item.Price</td>
+                <td>@item.PublishDate</td>
+            </tr>
+        }
+    </tbody>
+</table>
