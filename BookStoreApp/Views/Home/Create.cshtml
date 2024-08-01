@@ -3,17 +3,37 @@
     ViewData["Title"] = "Add Book To Store";
 }
 <div class="container d-flex justify-content-center vw-100 vh-100">
-    <div class="w-25 h-25 bg-info">
+    <div class="w-50 h-50 ">
         <h1>@ViewData["Title"]</h1>
 
         <form method="post" asp-action="Create">
-            <div>
-                <label for="name">Book Name : </label>
+            <div class="form-group p-2">
+                <label asp-for="Name" class="form-label">Book Name : </label>
                 <input class="form-control" asp-for="Name" id="name" placeholder="Book Name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div>
-            <input asp-for=""
+            <div class="form-group p-2">
+                <label asp-for="Author" class="form-label">Author : </label>
+                <input asp-for="Author" class="form-control" id="author" placeholder="Author" />
+                <span asp-validation-for="Author" class="text-danger"></span>
             </div>
+            <div class="form-group p-2">
+                <label asp-for="Price" class="form-label">Price : </label>
+                <input asp-for="Price" class="form-control" id="price" placeholder="Price" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group p-2">
+                <label asp-for="PublishDate" class="form-label">Publish Date : </label>
+                <input asp-for="PublishDate" class="form-control" id="publishDate" placeholder="PublishDate" />
+                <span asp-validation-for="PublishDate" class="text-danger"></span>
+            </div>
+            <div class="form-group ">
+                <input type="submit" value="Create" id="btnCreate" class="btn btn-primary" />
+            </div>
+            
         </form>
     </div>
 </div>
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

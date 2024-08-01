@@ -21,6 +21,11 @@ namespace BookStoreApp.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Create(BookViewModel book)
+        {
+            return Json(book);
+        }
         public IActionResult ListOfBook()
         {
             return View();
